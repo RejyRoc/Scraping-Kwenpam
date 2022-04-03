@@ -24,6 +24,6 @@ if req.status_code ==200:
             
         })
     print(data)
-#data_frame = pd.DataFrame(data)
-#data_frame.to_csv('kepam.csv')
+data_frame = pd.DataFrame(data)
+data_frame.to_csv('ayibo.csv')
         
