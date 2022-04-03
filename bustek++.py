@@ -16,15 +16,10 @@ for div in content_list:
     link = div.find('h3', {'class': 'entry-title'}).find('a')['href']
     date = div.find('time', {'class': 'entry-date'}).text
     #vue = div.find('div', {'class': 'f-12 mb-0'}).find('span', {'style': 'font-size: 13px;color:#6272af'}).text
-    author = div.find('a').text
+    author = div.find('span', {'class','td-post-author-name'}).get_text()
     #tag = div.find('span', {'style': 'font-size: 13px;color:  #777'}).text.replace(",", "-")
    
-    host1 = link
-    res1 = requests.get(f'{host1}/fr/blog/')
-    soup1 = bs(res.text, 'html.parser')
-
-    content_list1 = soup.find_all('div', {'class': 'td_module_1'})
-
+ 
     
 
     article_list.append({
@@ -37,5 +32,5 @@ for div in content_list:
     })
 
 print(article_list)
-data = pd.DataFrame(article_list)
-data
+#data = pd.DataFrame(article_list)
+#data
